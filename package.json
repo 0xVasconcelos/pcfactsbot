@@ -1,0 +1,28 @@
+{
+  "name": "pcfactsbot",
+  "version": "1.0.0",
+  "description": "@PCFactsBot source",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucaslg26/pcfactsbot.git"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "feed",
+    "news",
+    "json",
+    "tech",
+    "pcfacts"
+  ],
+  "author": "Lucas Vasconcelos (lucaslg26@yahoo.com.br)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lucaslg26/pcfactsbot/issues"
+  },
+  "homepage": "https://github.com/lucaslg26/pcfactsbot#readme"
+}

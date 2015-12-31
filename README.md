@@ -1,2 +1,2 @@
 # pcfactsbot
-@PCFactsBot sourced
+O bot do PC Facts no Telegram ;)
