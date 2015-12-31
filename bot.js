@@ -3,8 +3,6 @@ var token = '--TELEGRAM TOKEN--';
 var bot = new TelegramBot(token, {polling: true});
 
 var request = require("request");
-var progress = require('request-progress');
-var fs = require('fs');
 
 var botan = require('botanio')('--BOTANio TOKEN--');
 

@@ -24,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/lucaslg26/pcfactsbot/issues"
   },
-  "homepage": "https://github.com/lucaslg26/pcfactsbot#readme"
+  "homepage": "https://github.com/lucaslg26/pcfactsbot#readme",
+  "dependencies": {
+    "mongoose": "^4.3.4",
+    "node-telegram-bot-api": "^0.17.0",
+    "request": "^2.67.0"
+  }
 }
