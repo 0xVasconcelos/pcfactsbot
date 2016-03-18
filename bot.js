@@ -14,12 +14,12 @@ limitations under the License. */
 
 
 var TelegramBot = require('node-telegram-bot-api');
-var token = '--TELEGRAM TOKEN--';
+var token = process.argv[2];
 var bot = new TelegramBot(token, {polling: true});
 
 var request = require("request");
 
-var botan = require('botanio')('--BOTANio TOKEN--');
+var botan = require('botanio')(process.argv[3]);
 
 var steamList = require('./app/models/steamlist');
 var mongoose = require('mongoose');
