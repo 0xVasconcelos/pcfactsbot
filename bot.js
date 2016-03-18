@@ -23,7 +23,7 @@ var botan = require('botanio')(process.argv[3]);
 
 var steamList = require('./app/models/steamlist');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://MONGO.URL');
+mongoose.connect(process.argv[4]);
 
 
 var feedList = {
