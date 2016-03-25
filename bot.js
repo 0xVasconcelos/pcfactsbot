@@ -25,18 +25,17 @@ var steamList = require('./app/models/steamlist');
 var mongoose = require('mongoose');
 mongoose.connect(process.argv[4]);
 
-let globalText = `Sou um bot que envia as últimas notícias dos mais diversos sites de tecnologia! Conheça nosso canal no Telegram: @pcfacts
-              |Comandos:
-              |  /wccf
-              |  /tecmundo
-              |  /gamespot
-              |  /adrenaline
-              |  /pcper
-              |  /extremetech
-              |  /steamlist
-            Se deseja mandar alguma sugestão ou elogio entre em contato com @vasconcelos ;)`;
-
-
+let globalText =
+    `Sou um bot que envia as últimas notícias dos mais diversos sites de tecnologia! Conheça nosso canal no Telegram: @pcfacts
+      |Comandos:
+      |  /wccf
+      |  /tecmundo
+      |  /gamespot
+      |  /adrenaline
+      |  /pcper
+      |  /extremetech
+      |  /steamlist
+    Se deseja mandar alguma sugestão ou elogio entre em contato com @vasconcelos ;)`;
 
 var feedList = {
     'adrenaline':{
@@ -132,7 +131,6 @@ function sendSteamList(msg) {
         }
         bot.sendMessage(msg.chat.id, sendList);
     });
-
 }
 
 /* função que deleta um usuário da lista de ID's Steam de um grupo */
@@ -193,9 +191,7 @@ function addUserToList(msg, params) {
     });
 
 }
-
 /* envia a última noticia do feed passado pelo objeto feedList */
-
 function sendLastNews(msg, feed) {
     request({
         url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=' + feed.url,
