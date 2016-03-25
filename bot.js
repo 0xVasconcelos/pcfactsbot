@@ -14,16 +14,27 @@ limitations under the License. */
 
 
 var TelegramBot = require('node-telegram-bot-api');
-var token = '--TELEGRAM TOKEN--';
+var token = process.argv[2];
 var bot = new TelegramBot(token, {polling: true});
 
 var request = require("request");
 
-var botan = require('botanio')('--BOTANio TOKEN--');
+var botan = require('botanio')(process.argv[3]);
 
 var steamList = require('./app/models/steamlist');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://MONGO.URL');
+mongoose.connect(process.argv[4]);
+
+let globalText = `Sou um bot que envia as últimas notícias dos mais diversos sites de tecnologia! Conheça nosso canal no Telegram: @pcfacts
+              |Comandos:
+              |  /wccf
+              |  /tecmundo
+              |  /gamespot
+              |  /adrenaline
+              |  /pcper
+              |  /extremetech
+              |  /steamlist
+            Se deseja mandar alguma sugestão ou elogio entre em contato com @vasconcelos ;)`;
 
 
 var feedList = {
@@ -76,20 +87,17 @@ bot.onText(/^\/steamlist@PCFactsBot$/, function (msg, match) {
 });
 
 bot.onText(/\/ajuda/, function (msg, match) {
-    var text = "Sou um bot que envia as últimas notícias dos mais diversos sites de tecnologia! Conheça nosso canal no Telegram: @pcfacts\nComandos: \n/wccf \n/tecmundo \n/tecmundo \n/gamespot \n/adrenaline \n/pcper \n/extremetech \n/steamlist \n\nSe deseja mandar alguma sugestão ou elogio entre em contato com @lucaslg26 ;)";
-    bot.sendMessage(msg.chat.id, text);
+    bot.sendMessage(msg.chat.id, globalText);
     botan.track(message, 'help');
 });
 
 bot.onText(/\/help/, function (msg, match) {
-    var text = "Sou um bot que envia as últimas notícias dos mais diversos sites de tecnologia! Conheça nosso canal no Telegram: @pcfacts\nComandos: \n/wccf \n/tecmundo \n/tecmundo \n/gamespot \n/adrenaline \n/pcper \n/extremetech \n/steamlist \n\nSe deseja mandar alguma sugestão ou elogio entre em contato com @lucaslg26 ;)";
-    bot.sendMessage(msg.chat.id, text);
+    bot.sendMessage(msg.chat.id, globalText);
     botan.track(message, 'help');
 });
 
 bot.onText(/\/start/, function (msg, match) {
-    var text = "Sou um bot que envia as últimas notícias dos mais diversos sites de tecnologia! Conheça nosso canal no Telegram: @pcfacts  \nComandos: \n/wccf \n/tecmundo \n/tecmundo \n/gamespot \n/adrenaline \n/pcper \n/extremetech \n/steamlist \n\nSe deseja mandar alguma sugestão ou elogio entre em contato com @lucaslg26 ;)";
-    bot.sendMessage(msg.chat.id, text);
+    bot.sendMessage(msg.chat.id, globalText);
     botan.track(message, 'start');
 });
 
