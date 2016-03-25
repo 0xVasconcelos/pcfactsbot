@@ -1,3 +1,5 @@
+'use strict';
+
 /* Copyright 2015 Lucas Vasconcelos
 
 Licensed under the Apache License, Version 2.0 (the "License");
