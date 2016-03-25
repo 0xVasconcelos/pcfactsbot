@@ -37,6 +37,7 @@ let globalText = `Sou um bot que envia as últimas notícias dos mais diversos s
             Se deseja mandar alguma sugestão ou elogio entre em contato com @vasconcelos ;)`;
 
 
+
 var feedList = {
     'adrenaline':{
         'main': { 'url': 'http://adrenaline.uol.com.br/rss/0/0/tudo.xml' }
